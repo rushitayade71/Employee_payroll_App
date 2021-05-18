@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/add_employee_payroll.css">
 </head>
 <body>
-    <!-- UC_1 --->
+    <!-- UC_1 -- Employee Payroll App with Logo -->
     <header class= "header-content header">
         <div class= "logo-content">
             <img src="../assets/images/logo.png" alt="logo">
@@ -18,16 +18,17 @@
             </div>
         </div>
     </header>
-    <!-- UC_2 --->
-    <div class="form-content">
-        <form action="#" class="form" onsubmit="save(event); return false">
+    <!-- UC_2 -- Employee Payroll Form with Header and Name -->
+    <div class="form-content" id="formId">
+        <form action="#" class="form" onreset="resetForm()" onsubmit="save()">
             <div class="form-head">Employee Payroll Form</div>
             <div class="row-content">
                 <label for="name" class="label text">Name</label>
-                <input type="text" class="input" id="name" placeholder="Enter your name" required>
-                <error-output class="input-error" for= "name"></error-output>
+                <input type="text" class="input" id="name" name="name" 
+                       placeholder="Enter Name .." required>
+                <error-output class="text-error" for= "text"></error-output>
             </div>
-            <!-- UC_3 --->
+            <!-- UC_3 -- Specify Profile Picture to the Employee Payroll App -->
             <div class="row-content">
                 <label class="label text" for="profile">Profile image</label>
                 <div class="profile-radio-content">
@@ -49,7 +50,7 @@
                     </label>
                 </div>
             </div>
-            <!-- UC_4 --->
+            <!-- UC_4 -- Employee Payroll Form with Gender, Department And Salary Range -->
             <div class="row-content">
                 <label for="gender" class="label text">Gender</label>
                 <div>
@@ -80,17 +81,8 @@
                        max="500000" step="100" value="400000" required>
                 <output class="salary-output text" for="salary">400000</output>
             </div>
-            <script>
-                const salary =document.querySelector('#salary');
-                const output = document.querySelector('.salary-output');
-                output.textContent= salary.value;
-                salary.addEventListener('input', function()
-                {
-                    output.textContent= salary.value;
-                });
-            </script>
-        
-            <!-- UC_5 --->
+            
+            <!-- UC_5 -- Employee Payroll Form with Start Date -->
             <div class="row-content">
                 <label for="startDate" class="label text">Start Date</label>
                 <div>
@@ -150,13 +142,13 @@
                     </select>
                 </div>
             </div>
-            <!-- UC_6 --->
+            <!-- UC_6 -- Ability to add Notes And Button -->
             <div class="row-content">
                 <label class="label text" for="notes">Notes</label>
                 <textarea class="input" name="Notes" id="notes" style="height: 100px;"></textarea>
             </div>
             <div class="buttonParent">
-                <a href="./home.html" class="resetButton button cancelButton">Cancel</a>
+                <a href="./add_employee_payroll.html" class="resetButton button cancelButton">Cancel</a>
                 <div class="submit-reset">
                     <button type="submit" class="button submitButton" id="submitButton">Submit</button>
                     <button type="reset" class="resetButton button">Reset</button>
@@ -165,5 +157,6 @@
         </form>
     </div>
     <script defer src="../js/add_employee_payroll.js"></script>
+    <script defer src="../js/EmployeePayroll.js" ></script>
 </body>
 </html>
