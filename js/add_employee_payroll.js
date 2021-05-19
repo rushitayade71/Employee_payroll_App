@@ -63,12 +63,22 @@ const createEmployeePayroll = () => {
     employeePayroll.department = getSelectedValues('[name=department]');
     employeePayroll.salary = getInputValueById('#salary');
     employeePayroll.note = getInputValueById('#notes');
-    let date = getInputValueById('#day')+" "+getInputValueById('#month')+" "+
+    let date =  getInputValueById('#day')+" "+
+                getInputValueById('#month')+" "+
                 getInputValueById("#year");
-    employeePayroll.date = Date.parse(date);
+
+    employeePayroll.startDate = new Date(date);
     alert(employeePayroll.toString());
     return employeePayroll;
 }
+
+// const getOption = (id) => {
+//     var e = document.getElementById(id);
+//     var strUser = e.options[e.selectedIndex].text;
+//     return strUser;
+// }
+// let date= getOption('#day')+" "+getOption('#month')+
+//                             " "+getOption('#year');
 
 const getSelectedValues = (propertyValue) => {
     let allItems = document.querySelectorAll(propertyValue);
@@ -98,7 +108,7 @@ const resetForm = () => {
     unsetSelectedValues('[name=profile]');
     unsetSelectedValues('[name=gender]');
     unsetSelectedValues('[name=department]');
-    setValue('#salary', '');
+    setTextValue('#salary', '');
     setValue('#notes', '');
     setValue('#day', '1');
     setValue('#month', 'January');

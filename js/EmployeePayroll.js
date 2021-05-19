@@ -2,19 +2,19 @@
 
 class EmployeePayroll {
     
-     getId() {
+     get id() {
         return this._id;
     }
 
-    setId(id) {
+    set id(id) {
         this._id = id;
     }
 
-     getName() {
+     get name() {
         return this._name;
     }
 
-     setName(name) {
+     set name(name) {
         let nameRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{2,}$');
         if (nameRegex.test(name)) {
         this._name = name;
@@ -24,51 +24,51 @@ class EmployeePayroll {
         } 
     }
 
-    getProfilePic() {
+    get profilePic() {
         return this._profilePic;
     }
 
-    setProfilePic(profilePic) {
+    set profilePic(profilePic) {
         this._profilePic = profilePic;
     }
 
-    getGender() {
+    get gender() {
         return this._gender;
     }
 
-    setGender(gender) {
+    set gender(gender) {
         this._gender = gender;
     }
 
-    getDepartment() {
+    get department() {
         return this._department;
     }
 
-    setDepartment(department) {
+    set department(department) {
         this._department = department;
     }
 
-    getSalary() {
+    get salary() {
         return this._salary;
     }
 
-    setSalary(salary) {
+    set salary(salary) {
         this._salary = salary;
     }
 
-    getStartDate() {
+    get startDate() {
         return this._startDate;
     }
 
-    setStartDate(startDate) {
+    set startDate(startDate) {
         this._startDate = startDate;
     }
 
-    getNote() {
+    get note() {
         return this._note;
     }
 
-    setNote(note) {
+    set note(note) {
         this._note = note;
     }
     // toString Method //
@@ -76,9 +76,9 @@ class EmployeePayroll {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const empDate = !this.startDate ? "undefined" : 
                         this.startDate.toLocaleDateString("en-US", options);
+
         return "id=" + this.id + ", name=" + this.name + ", gender=" + this.gender + 
                 ", profilePic=" + this.profilePic + ", departments=" + this.department + 
-                ", salary=" + this.salary + ", startDate=" + empDate + ", note=" + this.note;
-    }
+                ", salary=" + this.salary + ", startDate=" + empDate + ", note=" + this.note;}
 
 }
